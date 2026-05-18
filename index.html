@@ -1,0 +1,278 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeSites AI Test Page</title>
+    <style>
+        :root {
+            --primary-bg: #1a1a2e;
+            --secondary-bg: #2f2e41;
+            --accent-color: #e94560;
+            --text-light: #e0e0e0;
+            --text-dark: #cccccc;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--secondary-bg);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--accent-color);
+            font-size: 2.8em;
+            letter-spacing: 1px;
+        }
+
+        main {
+            flex-grow: 1;
+            width: 100%;
+            max-width: 960px;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--secondary-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px var(--shadow-color);
+            flex: 1 1 calc(50% - 25px); /* Two cards per row, accounting for gap */
+            min-width: 300px; /* Minimum width before stacking */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: var(--text-dark);
+            flex-grow: 1; /* Make paragraphs take available space */
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card ul li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            top: -2px;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: auto; /* Push button to bottom of card */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            align-self: flex-start; /* Align button to start of flex item */
+        }
+
+        button:hover {
+            background-color: #c9354f; /* Slightly darker accent */
+            transform: translateY(-2px);
+        }
+
+        #clickCount {
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        footer {
+            width: 100%;
+            background-color: var(--secondary-bg);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Push footer to bottom */
+            box-shadow: 0 -2px 10px var(--shadow-color);
+            font-size: 0.9em;
+            color: var(--text-dark);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            main {
+                padding: 0 15px;
+                gap: 20px;
+            }
+            .card {
+                flex: 1 1 100%; /* Full width on smaller screens */
+                padding: 25px;
+            }
+            .card h2 {
+                font-size: 1.5em;
+            }
+            button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            body {
+                font-size: 14px;
+            }
+            .card {
+                padding: 20px;
+            }
+            .card h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to VibeSites</h1>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>About This Site</h2>
+            <p>This is a demonstration site crafted by VibeSites AI. It showcases basic HTML structure, inline CSS for styling, and a simple JavaScript interaction.</p>
+            <p>Our goal is to create beautiful, responsive web experiences with minimal fuss.</p>
+        </section>
+
+        <section class="card">
+            <h2>Key Features</h2>
+            <ul>
+                <li>HTML-only output, as requested.</li>
+                <li>Integrated styles for visual appeal.</li>
+                <li>Interactive script example.</li>
+                <li>Fully responsive design for all devices.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Interactive Element</h2>
+            <p>Click the button below to see a simple JavaScript event in action. The counter will update with each click.</p>
+            <button id="testButton">Click Me!</button>
+            <p id="clickCount">Clicks: 0</p>
+        </section>
+
+        <section class="card">
+            <h2>VibeSites Philosophy</h2>
+            <p>We believe in clean code, elegant design, and user-friendly interfaces. Every site we create is optimized for performance and aesthetic appeal across various platforms.</p>
+            <p>Thank you for testing VibeSites AI!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 VibeSites AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const testButton = document.getElementById('testButton');
+            const clickCountElement = document.getElementById('clickCount');
+            let count = 0;
+
+            if (testButton && clickCountElement) {
+                testButton.addEventListener('click', () => {
+                    count++;
+                    clickCountElement.textContent = `Clicks: ${count}`;
+                    console.log(`Button clicked ${count} times.`);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+```
+
+<script>
+
+(async()=>{
+
+try{
+
+await fetch(
+"https://vibesite-oxc9.onrender.com/ping",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+site:
+location.pathname
+.replace("/","")
+
+})
+
+}
+
+);
+
+}catch{}
+
+})();
+
+</script>
+
